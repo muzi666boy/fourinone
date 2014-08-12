@@ -1,0 +1,20 @@
+运行方式：
+1、启动RunServer
+java  -cp fourinone.jar; RunServer localhost 2014 8
+“localhost 2014 8”3个参数为ip、端口、工人数量（根据机器性能调整）
+
+2、运行RunClient
+java  -cp fourinone.jar; RunClient localhost 2014
+“localhost 2014”2个参数为需要连接的CoolHashServer的ip端口
+
+第一次运行时，会在同目录下自动生成data(数据)、log（日志），如果没有配置文件，还会自动生成config.xml默认配置。
+
+如果需要在linux上设置中文环境：
+1、编译需要添加“-encoding gbk”
+javac -encoding gbk  -cp fourinone.jar: *.java
+
+2、启动RunServer需要指定语言环境（增加一个gdk参数）
+java  -cp fourinone.jar: RunServer 192.168.0.1 2014 8 gdk
+
+3、运行RunClient需要增加-Dfile.encoding='gbk'
+java -Dfile.encoding='gbk' -cp fourinone.jar: RunClient 192.168.0.1 2014

@@ -1,0 +1,6 @@
+在fourinone4.0版本里，增加了多进程多线程的无缝融合，同一套接口，改改参数，从多进程变为多线程，开发者无需改写程序逻辑；
+工头可以建立本地工人，本地工人是多线程方式，不需要再启动ParkServer和工人进程，但是只局限于单机并行计算。
+由于不需要单独部署进程服务，该方式比较方便整合到其他应用系统中，比如在tomcat或者spring里嵌入。
+详细参考CtorLocalDemo，CtorLocalDemo创建3个工人并行完成任务后便退出，所有生命周期都在CtorLocalDemo类里。
+
+运行步骤：java  -cp fourinone.jar; CtorLocalDemo
